@@ -1,0 +1,18 @@
+.form {
+    
+    input {
+        display: flex;
+        padding: 10px 8px;
+        width: 100%;
+        max-width: 400px;
+        height: 45px;
+        border: 1px solid #CAD0C9;
+        border-radius: 4px;
+        text-align: left;
+        margin: 20px auto;
+        font-size: 14px;
+        font-weight: 300;
+        font-family: Nunito Sans;
+        outline: none;
+    }
+}

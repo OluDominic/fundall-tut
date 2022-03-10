@@ -1,0 +1,135 @@
+.register {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    .signup-div1 {
+        width: 50%;
+        float: left;
+        display: block;
+
+        .logo {
+            width: 60px;
+            height: 100%;
+            position: relative;
+            margin-top: 50px;
+            left: 100px;
+
+            img {
+                display: block;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .signup-image {
+            width: 200px;
+            height: 220px;
+            margin-left: 250px;
+            position: relative;
+            margin-top: 100px;
+
+            img {
+                display: block;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .signup-notes {
+            margin-left: 175px;
+        h1 {
+            margin-top: 50px;
+            font-size: 40px;
+            font-family: Roboto;
+
+            span {
+                color: #4DE897;
+            }
+        }
+        .h1 {
+            margin-top: -20px;
+        }
+        h2 {
+            font-family: 21px;
+            font-family: Roboto;
+        }
+    }
+    }
+
+    .signup-div2 {
+        width: 50%;
+        float: left;
+        display: block;
+
+        .signup-form {
+
+            .firstLast {
+                width: 100%;
+                height: 100%;
+                display: block;
+
+                .first {
+                    float: left;
+                    width: 50%;
+                    display: block;
+                    margin-left: 80px;
+                    max-width: 180px;
+
+                    span {
+                        font-size: 16px;
+                        font-family: roboto;
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+
+                .last {
+                    float: left;
+                    width: 50%;
+                    display: block;
+                    margin-left: 46px;
+                    max-width: 180px;
+
+                    span {
+                        font-size: 16px;
+                        font-family: roboto;
+                    }
+                }
+            }
+
+            h5 {
+                font-size: 16px;
+                font-family: Roboto;
+                text-align: center;
+
+                span {
+                    color: #4DE897;
+                }
+            }
+        }
+
+        .terms {
+            text-align: center;
+            margin-bottom: 50px;
+            h3 {
+                color: #97A19D;
+                font-family: Nunito Sans;
+                font-size: 16px;
+
+                span {
+                    color: #4DE897;
+                }
+            }
+            span {
+                font-family: Nunito Sans;
+                font-size: 16px;
+                color: #4DE897;
+            }
+        }
+    }
+}

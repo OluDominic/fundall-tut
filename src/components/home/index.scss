@@ -1,0 +1,44 @@
+.home {
+    background: white;
+
+    .home-png {
+        max-width: 275.57px;
+        height: 279.19px;
+        margin-top: 150px;
+        margin-left: 500px;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+        img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .writeup {
+        width: 100%;
+        text-align: center;
+        margin-top: -104px;
+        h1 {
+            font-size: 40px;
+            font-family: Roboto;
+            text-transform: capitalize;
+            color: #000000;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-family: Roboto;
+            text-transform: capitalize;
+            color: #000000;
+        }
+
+        h4 {
+            font-size: 24px;
+            font-family: Roboto;
+            color: #000000;
+        }
+    }
+}
