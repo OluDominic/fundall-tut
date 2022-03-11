@@ -22,11 +22,11 @@ const Login =()=> {
         <div className="register">
                 <div className="signup-div1">
                     <div className="logo">
-                    <Link >
+                    <Link to="/">
                             <img src={Img} alt="img"/>
                         </Link>
                     </div>
-                    <div className="signup-image">
+                    <div style={{width:"277px"}} className="signup-image">
                         <img src={sign} alt="img" />
                     </div>
                     <div className="signup-notes">
