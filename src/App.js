@@ -1,28 +1,31 @@
 import logo from './logo.svg';
 import './default.scss';
-import { Routes, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Home from './components/home';
 import SignUp from './components/signup';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route  path="/" render={()=> (
+      <BrowserRouter>
+      <Switch>
+        <Route exact path="/" render={()=> (
           <Home/>
         )}/>
-        <Route path="/signup" render={()=> (
+        <Route exact path="/signup" render={()=> (
           <SignUp/>
         )}/>
-        <Route path="/login" render={()=> (
+        <Route exact path="/login" render={()=> (
           <Login/>
         )}/>
-        <Route path="/dashboard" render={()=> (
+        <Route exact path="/dashboard" render={()=> (
           <Dashboard/>
         )}/>
-      </Routes>
+      </Switch>
+      </BrowserRouter>
     </div>
   );
 }
