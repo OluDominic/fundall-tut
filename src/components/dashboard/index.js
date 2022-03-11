@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import Img from './../../Group 24.1.png'
 import rec from './../../Rectangle 9.png'
@@ -7,9 +7,35 @@ import FormInput from '../forms/formInput';
 import ProgressBar from '@ramonak/react-progress-bar'
 import Image from './../../Group (1).png'
 import './index.scss'
+import axios from 'axios'
 
 
 const Dashboard =()=> {
+    const [user, setuser] = useState([]);
+    const [err, setErr] = useState([]);
+
+    useEffect(()=> {
+        getUser();
+    },[])
+
+    console.log(localStorage.getItem("access"))
+
+    const getUser =()=> {
+        const headers = {
+            "Content-Type": "application/json",
+            Authorization: `Bearer lll`,
+            "Access-Control-Allow-Origin":"*"
+        }
+        axios.get("https://campaign.fundall.io/api/v1/base/profile", {
+            headers
+        })
+        .then((data)=> {
+            setuser(data.data[0])
+        })
+        .catch(error=> {
+            setErr("There was an error authenticating your request")
+        })
+    }
 
     return (
         <div className="dashboard">
@@ -26,8 +52,8 @@ const Dashboard =()=> {
                         <div className="user"><img src={user} alt="user" /></div>
                     </div>
                     <div className="name-email">
-                        <h2>Babatunde Fashola</h2>
-                        <h3>baba2@gmail.com</h3>
+                        <h2>{user.firstname} {user.lastname}</h2>
+                        <h3>{user.email}</h3>
                     </div>
                     </div>
                     <div className="expenses">
@@ -62,7 +88,7 @@ const Dashboard =()=> {
                 </div>
                 <div className="dash-sub2">
                     <div className="welcome-back">
-                        <h1>Welcome back, <span>Babatunde</span></h1>
+                        <h1>Welcome back, <span>{user.firstname}</span></h1>
                         <h3>Now lets get your expenses for this month</h3>
                         <div className="wel-img">
                     <Link to="/">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './index.scss'
 import { Link, useHistory } from 'react-router-dom'
 import sign from './../../Group.png'
@@ -6,17 +6,37 @@ import Img from './../../Group 24.1.png'
 import FormWrapper from '../forms/formWrapper';
 import FormInput from '../forms/formInput';
 import Button from '../forms/button';
+import axios from 'axios'
+import { token } from '../../api/token'
 
 
 const Login =()=> {
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [err, setErr] = useState("")
     const history = useHistory();
 
-    const dashboard =()=> {
-        history.push('/dashboard')
-    }
     const register =()=> {
-        history.push('/signup')
+        axios.post("https://campaign.fundall.io/api/v1/login", {
+            email: email,
+            password: password
+        }
+        ,{
+            "Content-Type": "application/json",
+            Authorization: `Bearer lll`,
+            "Access-Control-Allow-Origin":"*"
+        })
+        .then((response)=> {
+            history.push('/dashboard')
+        })
+        .catch(error=> {
+            setErr(error.messsage)
+            console.log(error.messsage)
+        })
     }
+
+    localStorage.setItem('access', token.data)
 
     return (
         <div className="register">
@@ -45,22 +65,25 @@ const Login =()=> {
                             </div>
                             <div style={{marginTop: "50px"}}>
                             <div>
+                            <h3 style={{color: 'red'}}>{err}</h3>
                                 <label>Email or Username</label>
                                 <FormInput 
-                            type="text"
-                            name="email"
-                            placeholder="Enter Email"
-                            />
+                                type="text"
+                                name="email"
+                                placeholder="Enter Email"
+                                handleChange={(e)=> setEmail(e.target.value)}
+                                />
                             </div>
                             <div>
                                 <label>Password</label>
                                 <FormInput 
-                            type="password"
-                            name="email"
-                            placeholder="Enter Password"
+                                type="password"
+                                name="email"
+                                placeholder="Enter Password"
+                                handleChange={(e)=> setPassword(e.target.value)}
                             />
                             </div>
-                            <Button onClick={dashboard}>LOGIN</Button>
+                            <Button onClick={register}>LOGIN</Button>
                             <br />
                             <h5>Don't have an account? <span style={{cursor: "pointer"}} onClick={register}>Register here</span></h5>
                             </div>

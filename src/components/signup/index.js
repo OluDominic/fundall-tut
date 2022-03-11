@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.scss'
 import { Link, useHistory } from 'react-router-dom'
 import sign from './../../Group 2.png'
@@ -6,12 +6,40 @@ import Img from './../../Group 24.1.png'
 import FormWrapper from '../forms/formWrapper';
 import FormInput from '../forms/formInput';
 import Button from '../forms/button';
+import axios from 'axios'
 
 const SignUp =()=> {
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState('')
+    const [passwordConfirm, setPasswordConfirm] = useState("")
+    const [successMessage, setSuccessMessage]= useState("")
+    const [errorMessage, setErrorMessage]= useState("")
+
+
     const history = useHistory();
 
     const login =()=> {
-        history.push('/login')
+        axios.post("https://campaign.fundall.io/api/v1/register", {
+            firstname: firstName,
+            lastname: lastName,
+            email: email,
+            password: password,
+            password_confirmation: passwordConfirm
+        }
+        ,{
+            "Content-Type": "application/json",
+            Authorization: `Bearer lll`,
+            "Access-Control-Allow-Origin":"*"
+        })
+        .then(()=> {
+            history.push('/login')
+            setSuccessMessage('Registration successfull')
+        })
+        .catch(error => {
+            setErrorMessage('The firstname field is required')
+        })
     }
 
     return (
@@ -43,6 +71,8 @@ const SignUp =()=> {
                             type="text"
                             name="firstname"
                             placeholder="Enter Firstname"
+                            value={firstName}
+                            handleChange={(e)=> setFirstName(e.target.value)}
                             />
                             </div>
                             <div className="last">
@@ -51,6 +81,8 @@ const SignUp =()=> {
                             type="text"
                             name="lastname"
                             placeholder="Enter Firstname"
+                            value={lastName}
+                            handleChange={(e)=> setLastName(e.target.value)}
                             />
                             </div>
                             </div>
@@ -60,6 +92,8 @@ const SignUp =()=> {
                             type="text"
                             name="email"
                             placeholder="Enter Email"
+                            value={email}
+                            handleChange={(e)=> setEmail(e.target.value)}
                             />
                             </div>
                             <div>
@@ -68,6 +102,8 @@ const SignUp =()=> {
                             type="password"
                             name="email"
                             placeholder="Enter Password"
+                            value={password}
+                            handleChange={(e)=> setPassword(e.target.value)}
                             />
                             </div>
                             <div>
@@ -76,9 +112,11 @@ const SignUp =()=> {
                             type="password"
                             name="email"
                             placeholder="Confirm password"
+                            value={passwordConfirm}
+                            handleChange={(e)=> setPasswordConfirm(e.target.value)}
                             />
                             </div>
-                            <Button>Sign up</Button>
+                            <Button onClick={login}>Sign up</Button>
                             <br />
                             <h5>Already have an account? <span style={{cursor: "pointer"}} onClick={login}>Login here</span></h5>
                             </div>

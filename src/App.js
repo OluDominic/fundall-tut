@@ -6,8 +6,11 @@ import SignUp from './components/signup';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
 import { BrowserRouter } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
 function App() {
+
+  
   return (
     <div className="App">
       <BrowserRouter>
