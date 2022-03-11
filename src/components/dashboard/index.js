@@ -18,22 +18,35 @@ const Dashboard =()=> {
         getUser();
     },[])
 
-    console.log(localStorage.getItem("access"))
 
     const getUser =()=> {
+        const token = localStorage.getItem("access")
         const headers = {
             "Content-Type": "application/json",
-            Authorization: `Bearer lll`,
+            Authorization: `Bearer ${token}`,
             "Access-Control-Allow-Origin":"*"
         }
         axios.get("https://campaign.fundall.io/api/v1/base/profile", {
             headers
         })
         .then((data)=> {
-            setuser(data.data[0])
+            console.log(data.data.success.data.avatar)
+            setuser(data.data.success.data)
         })
         .catch(error=> {
             setErr("There was an error authenticating your request")
+        })
+    }
+
+    const updateAvi =()=> {
+        const token = localStorage.getItem("access")
+        const headers = {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+        }
+        axios.post("https://campaign.fundall.io/api/v1/base/avatar", {
+                headers,
+        avatar: user.avatar
         })
     }
 
@@ -48,8 +61,8 @@ const Dashboard =()=> {
                     </div>
                     <div className="user-divs">
                     <div className="users">
-                        <div className="rec"><img src={rec} alt="rec" /></div>
-                        <div className="user"><img src={user} alt="user" /></div>
+                        <div className="rec"><img onClick={updateAvi} src={user.avatar} alt="rec" /></div>
+                        {/* <div className="user"><img src={user} alt="user" /></div> */}
                     </div>
                     <div className="name-email">
                         <h2>{user.firstname} {user.lastname}</h2>
