@@ -18,7 +18,7 @@ const SignUp =()=> {
         <div className="register">
                 <div className="signup-div1">
                     <div className="logo">
-                    <Link tp="/">
+                    <Link to="/">
                             <img src={Img} alt="img"/>
                         </Link>
                     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Img from './../../Group 24.1.png'
 import rec from './../../Rectangle 9.png'
 import user from './../../User.png'
