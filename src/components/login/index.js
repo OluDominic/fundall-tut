@@ -46,7 +46,7 @@ const Login =()=> {
                             <img src={Img} alt="img"/>
                         </Link>
                     </div>
-                    <div style={{width:"277px"}} className="signup-image">
+                    <div className="signup-image">
                         <img src={sign} alt="img" />
                     </div>
                     <div className="signup-notes">
@@ -57,11 +57,11 @@ const Login =()=> {
                 <div className="signup-div2">
                     <div className="signup-form">
                         <FormWrapper>
-                            <div style={{marginLeft: "80px"}}>
+                            <div>
                                 <h1 style={{fontFamily: "Roboto", 
-                            fontSize: "34px"}}>Holla</h1>
+                            }}>Holla</h1>
                                 <h3 style={{fontFamily: "Roboto", 
-                            fontSize: "20px"}}>Sign in to the vibe!</h3>
+                            }}>Sign in to the vibe!</h3>
                             </div>
                             <div style={{marginTop: "50px"}}>
                             <div>

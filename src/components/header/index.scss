@@ -50,6 +50,7 @@
     .headerbut {
         float: right;
         margin-right: 100px;
+        margin-top: -30px;
         ul,li {
             margin: 0;
             padding: 0;
@@ -86,4 +87,74 @@
         }
     }
 }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px){
+    .header {
+    
+        .head {
+            top: 50px;
+    
+            .logo {
+                width: 60px;
+                left: 100px;
+            }
+    
+        .headerbut {
+            float: right;
+            margin-right: 100px;
+            margin-top: -30px;
+    
+            li {
+                display: inline-block;
+                list-style-type: none;
+                margin-right: 30px;
+    
+                a {
+                    font-size: 18px;
+                }
+            }
+            .signup {
+                    width: 98.01px;
+                    font-size: 18px;
+                    padding: 7px 10px;
+            }
+        }
+    }
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .header {
+    
+        .head {
+            top: 50px;
+    
+            .logo {
+                width: 60px;
+                left: 50px;
+            }
+    
+        .headerbut {
+            float: right;
+            margin-right: 30px;
+            margin-top: -30px;
+    
+            li {
+                display: inline-block;
+                list-style-type: none;
+                margin-right: 15px;
+    
+                a {
+                    font-size: 15px;
+                }
+            }
+            .signup {
+                    width: 98.01px;
+                    font-size: 15px;
+                    padding: 6px 5px;
+            }
+        }
+    }
+    }
 }

@@ -4,8 +4,8 @@
     .home-png {
         max-width: 275.57px;
         height: 279.19px;
+        margin: auto;
         margin-top: 150px;
-        margin-left: 500px;
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         transform: translateY(-50%);
@@ -39,6 +39,58 @@
             font-size: 24px;
             font-family: Roboto;
             color: #000000;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px){
+    .home {
+        background: white;
+    
+        .home-png {
+            max-width: 200px;
+            height: 220px;
+            margin-top: 300px;
+        }
+    
+        .writeup {
+            h1 {
+                font-size: 40px;
+            }
+    
+            h2 {
+                font-size: 40px;
+            }
+    
+            h4 {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .home {
+        background: white;
+    
+        .home-png {
+            max-width: 200px;
+            height: 220px;
+            margin-top: 300px;
+        }
+    
+        .writeup {
+            h1 {
+                font-size: 30px;
+            }
+    
+            h2 {
+                font-size: 30px;
+            }
+    
+            h4 {
+                font-size: 17px;
+            }
         }
     }
 }

@@ -63,7 +63,7 @@ const SignUp =()=> {
                 <div className="signup-div2">
                     <div className="signup-form">
                         <FormWrapper>
-                            <div style={{marginTop: "50px"}}>
+                            <div className="formWrappers" style={{marginTop: "50px"}}>
                             <div className="firstLast">
                             <div className="first">
                             <span>First name</span>

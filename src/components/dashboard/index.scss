@@ -1,10 +1,12 @@
-.dashboard {
-    width: 100%;
-    height: 100%;
+html {
     background: #FCFBFC;
     border: 10px solid #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.082937);
     border-radius: 40px;
+}
+.dashboard {
+    width: 100%;
+    height: 100%;
 
     .dash-sub {
         width: 100%;
@@ -240,6 +242,11 @@
                     label {
                         margin-left: 75px;
                     }
+
+                    div {
+                        max-width: 400px;
+                        margin-left: 40px;
+                    }
                 }
                 h4 {
                     font-size: 16px;
@@ -300,6 +307,332 @@
                 margin-top: 20px;
                 margin-bottom: 30px;
                 margin-left: 45%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px){
+    .dashboard {
+    
+        .dash-sub {
+    
+            .dash-sub1 {
+                margin-left: 0;
+                .logo {
+                    left: 50px;
+                }
+    
+                .user-divs {
+                .users {
+    
+                    .rec {
+                        width: 70px;
+                        height: 67px;
+                        left: 50px;
+                    }
+                }
+    
+                .name-email {
+    
+                    h2 {
+                        font-size: 24px;
+                    }
+    
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+            }
+    
+            .expenses {
+                margin-left: 50px;
+                h3 {
+                    font-size: 18px;
+                }
+    
+                h2 {
+                    font-size: 25px;
+                }
+                .progress {
+                    max-width: 200px;
+                    width: 100%;
+                }
+            }
+            .expenses-summary {
+                margin-left: 50px;
+    
+                h4 {
+                    font-size: 14px;
+                }
+    
+                .date-amount {
+                    margin-left: -20px;
+    
+                    .date {
+    
+                        h3 {
+                            font-size: 12px;
+                        }
+                    }
+    
+                    .amount {
+    
+                        h4 {
+                            font-size: 12px;
+                        }
+                    }
+                }
+                .numbering {
+                    text-align: left;
+                    font-size: 11px;
+                    padding: 10px 8px;
+                }
+            }
+            }
+    
+            .dash-sub2 {
+                max-width: 300px;
+                margin-left: 40px;
+    
+                .welcome-back {
+                    margin-left: 20px;
+                    margin-top: 50px;
+                    margin-right: 20px;
+                    height: 80px;
+    
+                    h1 {
+                        font-size: 18px;
+                        padding: 10px 12px;
+                    }
+    
+                    h3 {
+                        font-size: 12px;
+                    }
+                    .wel-img {
+                            width: 150px;
+                            height: 100px;
+                            position: absolute;
+                            margin-top: -135px;
+                            right: 110px;
+                            float: right;
+                    }
+                }
+                .target {
+                    margin-top: 50px;
+                    .tme {
+                        label {
+                            margin-left: 25px;
+                        }
+                        div {
+                            width: 250px;
+                            margin: auto;
+                        }
+                    }
+    
+                    
+                    .today-expenses {
+                        margin-left: 25px;
+    
+                        .items {
+                        max-width: 100px;
+                        }
+    
+                        .amount {
+                        margin-left: 30px;
+                        max-width: 75px;
+                        }
+                    }
+                }
+    
+                .amt {
+                    float: right;
+                    font-size: 12px;
+                    font-family: Roboto;
+                    margin-left: 25px;
+                }
+    
+                .saves {
+                    margin-left: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .dashboard {
+    
+        .dash-sub {
+    
+            .dash-sub1 {
+                margin-left: 0;
+                .logo {
+                    left: 20px;
+                }
+    
+                .user-divs {
+                .users {
+    
+                    .rec {
+                        width: 50px;
+                        height: 35px;
+                        left: 20px;
+                    }
+                }
+    
+                .name-email {
+    
+                    h2 {
+                        font-size: 13px;
+                    }
+    
+                    h3 {
+                        font-size: 10px;
+                    }
+                }
+            }
+    
+            .expenses {
+                margin-top: 50px;
+                margin-left: 20px;
+                h3 {
+                    font-size: 11px;
+                }
+    
+                h2 {
+                    font-size: 14px;
+                }
+                .progress {
+                    max-width: 100px;
+                    width: 100%;
+                }
+            }
+            .expenses-summary {
+                background: #FFFFFF;
+                box-shadow: 0px 0px 6px rgba(77, 232, 151, 0.19);
+                border-radius: 10px;
+                margin-left: -30px;
+                margin-top: 50px;
+    
+                h4 {
+                    font-size: 11px;
+                    padding: 4px 6px;
+                }
+    
+                .date-amount {
+                    width: 100%;
+                    display: block;
+    
+                    .date {
+                        width: 60%;
+                        float: left;
+                        display: block;
+                        margin-left: -20px;
+    
+                        h3 {
+                            font-size: 10px;
+                            font-family: Nunito Sans;
+                            color: #30443C;
+                            margin-left: 50px;
+                            width: 100%;
+                        }
+                    }
+    
+                    .amount {
+                        width: 40%;
+                        float: left;
+                        display: block;
+    
+                        h4 {
+                            font-size: 10px;
+                            font-family: Nunito Sans;
+                            color: #30443C;
+                        }
+                    }
+                }
+                .numbering {
+                    text-align: center;
+                    font-size: 14px;
+                    margin-bottom: 100px;
+                    color: #30443C;
+                    .one {
+                        opacity: 0.6;
+                        border: 1px solid #A4B0A3;
+                        box-sizing: border-box;
+                        border-radius: 3px;
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+            }
+    
+            .dash-sub2 {
+                max-width: 200px;
+                margin-left: 20px;
+    
+                .welcome-back {
+                    margin-left: 20px;
+                    margin-top: 50px;
+                    margin-right: 20px;
+                    height: 60px;
+    
+                    h1 {
+                        font-size: 12px;
+                        padding: 10px 12px;
+                        width: 100%;
+                    }
+    
+                    h3 {
+                        font-size: 7px;
+                    }
+                    .wel-img {
+                            width: 80px;
+                            height: 60px;
+                            position: absolute;
+                            margin-top: -105px;
+                            right: 30px;
+                            float: right;
+                    }
+                }
+                .target {
+                    margin-top: 20px;
+                    .tme {
+                        label {
+                            margin-left: 15px;
+                        }
+                        div {
+                            width: 180px;
+                            margin: auto;
+                        }
+                    }
+    
+                    
+                    .today-expenses {
+                        margin-left: 25px;
+    
+                        .items {
+                        max-width: 80px;
+                        }
+    
+                        .amount {
+                        margin-left: 20px;
+                        max-width: 60px;
+                        }
+                    }
+                }
+    
+                .amt {
+                    float: right;
+                    font-size: 11px;
+                    font-family: Roboto;
+                    margin-left: 25px;
+                }
+    
+                .saves {
+                    margin-left: 7%;
+                }
             }
         }
     }

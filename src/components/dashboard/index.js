@@ -13,6 +13,7 @@ import axios from 'axios'
 const Dashboard =()=> {
     const [user, setuser] = useState([]);
     const [err, setErr] = useState([]);
+    const [image, setImage] = useState([]);
 
     useEffect(()=> {
         getUser();
@@ -30,7 +31,7 @@ const Dashboard =()=> {
             headers
         })
         .then((data)=> {
-            console.log(data.data.success.data.avatar)
+            console.log(data.data.success.data)
             setuser(data.data.success.data)
         })
         .catch(error=> {
@@ -38,16 +39,25 @@ const Dashboard =()=> {
         })
     }
 
-    const updateAvi =()=> {
-        const token = localStorage.getItem("access")
-        const headers = {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
-        }
-        axios.post("https://campaign.fundall.io/api/v1/base/avatar", {
-                headers,
-        avatar: user.avatar
-        })
+    const updateAvi =async e=> {
+        e.preventDefault();
+    let data = new FormData();
+    console.log(user.avatar + ' ' + 'this is image pathname')
+    data.append('image', user.avatar);
+    
+    const api = localStorage.getItem('access')
+    const config = {
+        headers: { 
+            'content-type': 'multipart/form-data',
+            Authorization: `Bearer ${api}`
+         }
+       }
+        axios.post("https://campaign.fundall.io/api/v1/base/avatar",data, config
+        )
+        .then(res => {
+            console.log(res.data + 'this is data after api call');
+         })
+         .catch(err => console.log(err));
     }
 
     return (
@@ -61,7 +71,9 @@ const Dashboard =()=> {
                     </div>
                     <div className="user-divs">
                     <div className="users">
-                        <div className="rec"><img onClick={updateAvi} src={user.avatar} alt="rec" /></div>
+                        <div className="rec">
+                        <img src={user.avatar} alt="img"/>
+                        </div>
                         {/* <div className="user"><img src={user} alt="user" /></div> */}
                     </div>
                     <div className="name-email">
@@ -112,7 +124,7 @@ const Dashboard =()=> {
                     <div className="target">
                         <div className="tme">
                         <label>Target Monthly Expenses</label>
-                        <div style={{marginLeft:"-150px"}}>
+                        <div>
                         <FormInput
                         type="text"
                         placeholder="596,000"
@@ -120,9 +132,9 @@ const Dashboard =()=> {
                         />
                         </div>
                         <label>Date</label>
-                        <div style={{marginLeft:"-150px"}}>
+                        <div>
                         <FormInput
-                        type="text"
+                        type="date"
                         placeholder="08/08/2019"
                         name="date"
                         />

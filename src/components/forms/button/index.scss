@@ -18,3 +18,21 @@
     -moz-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
 }
+
+@media only screen and (max-width: 1000px){
+    .btn {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .btn {
+        width: 160px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .btn {
+        width: 100px;
+    }
+}
