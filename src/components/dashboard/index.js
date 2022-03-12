@@ -102,7 +102,7 @@ const Dashboard =()=> {
                                 <h3>28, Oct 2018</h3>
                             </div>
                             <div className="amount">
-                                <h4>Amount</h4>
+                                <h4 style={{color: "#30443C"}}>Amount</h4>
                                 <h4>N30,000</h4>
                                 <h4>N30,000</h4>
                                 <h4>N30,000</h4>
