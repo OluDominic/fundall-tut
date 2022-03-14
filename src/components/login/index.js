@@ -17,6 +17,10 @@ const Login =()=> {
     const [err, setErr] = useState("")
     const history = useHistory();
 
+    const signup =()=> {
+        history.push('/signup')
+    }
+
     const register =()=> {
         axios.post("https://campaign.fundall.io/api/v1/login", {
             email: email,
@@ -85,7 +89,7 @@ const Login =()=> {
                             </div>
                             <Button onClick={register}>LOGIN</Button>
                             <br />
-                            <h5>Don't have an account? <span style={{cursor: "pointer"}} onClick={register}>Register here</span></h5>
+                            <h5>Don't have an account? <span style={{cursor: "pointer"}} onClick={signup}>Register here</span></h5>
                             </div>
                         </FormWrapper>
                     </div>
