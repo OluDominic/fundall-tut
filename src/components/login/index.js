@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState } from 'react'
 import './index.scss'
 import { Link, useHistory } from 'react-router-dom'
 import sign from './../../Group.png'

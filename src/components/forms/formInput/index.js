@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss'
 
-const FormInput =({label, handleChange, ...otherProps})=> {
+const FormInput =({label, ref, handleChange, ...otherProps})=> {
 
 
     return (

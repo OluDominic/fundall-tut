@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import Img from './../../Group 24.1.png'
 import rec from './../../Rectangle 9.png'
@@ -15,9 +15,36 @@ const Dashboard =()=> {
     const [err, setErr] = useState([]);
     const [image, setImage] = useState([]);
 
+    const [first, setFirst] = useState('')
+    const [second, setSecond] = useState('')
+    const [third, setThird] = useState('')
+    const [total, setTotal] = useState('')
+
     useEffect(()=> {
         getUser();
     },[])
+
+    const firstExpenses = useRef();
+    const secondExpenses = useRef();
+    const thirdExpenses = useRef();
+
+    const submit=()=> {
+        
+        let total = parseInt(first) + 
+        parseInt(second) + 
+        parseInt(third)
+        setTotal(total)
+    }
+
+    const amount =()=> {
+        
+    }
+
+    localStorage.setItem('first', first)
+    localStorage.setItem('second', second)
+    localStorage.setItem('third', third)
+
+    console.log(localStorage.getItem('first'))
 
 
     const getUser =()=> {
@@ -31,14 +58,13 @@ const Dashboard =()=> {
             headers
         })
         .then((data)=> {
-            console.log(data.data.success.data)
             setuser(data.data.success.data)
         })
         .catch(error=> {
             setErr("There was an error authenticating your request")
         })
     }
-
+   
     const updateAvi =async e=> {
         e.preventDefault();
     let data = new FormData();
@@ -103,9 +129,9 @@ const Dashboard =()=> {
                             </div>
                             <div className="amount">
                                 <h4 style={{color: "#30443C"}}>Amount</h4>
-                                <h4>N30,000</h4>
-                                <h4>N30,000</h4>
-                                <h4>N30,000</h4>
+                                <h4>{first}</h4>
+                                <h4>{second}</h4>
+                                <h4>{third}</h4>
                             </div>
                         </div>
                         <div className="numbering"><button className="one">1</button> of <span>5</span></div>
@@ -164,22 +190,28 @@ const Dashboard =()=> {
                                 type="text"
                                 placeholder="10000"
                                 name="amt1"
+                                value={first}
+                                handleChange={e=> setFirst(e.target.value)}
                                 />
                                 <FormInput
                                 type="text"
                                 placeholder="10000"
                                 name="amt2"
+                                value={second}
+                                handleChange={e=> setSecond(e.target.value)}
                                 />
                                 <FormInput
                                 type="text"
                                 placeholder="10000"
                                 name="amt3"
+                                value={third}
+                                handleChange={e=> setThird(e.target.value)}
                                 />
                             </div>
                         </div>
-                        <div className="amt"><h3>Total Actual Expenses: N <span>40,000.00</span></h3></div>
+                        <div className="amt"><h3>Total Actual Expenses: N <span>{total}</span></h3></div>
                     </div>
-                    <button className="saves">save today's expenses</button>
+                    <button onClick={submit} className="saves">save today's expenses</button>
                 </div>
             </div>
         </div>
